@@ -1,0 +1,118 @@
+<html>
+	<head>
+		<title>Snake Game</title>
+		<style>
+
+			#button-div {
+				margin: auto;
+				display:grid;
+				grid-gap: 5px 5px;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%,-85%);
+				width: 600px;
+				grid-template-columns:1fr 1fr 1fr;
+				grid-template-rows: 1fr 1fr 1fr;
+			}
+
+			button {
+				font-size:30px;
+				background-color: white;
+				color: black;
+				border-radius:35%;
+				cursor: pointer;
+			}
+
+			.start-game {
+				background-color:DarkGreen;
+				color: white;
+				border: 5px solid rgba(255,255,255,0.2);
+			}
+			
+			.start-game:hover {
+				filter:brightness(85%);
+			}
+			
+			.active-button {
+				background-color:black; 
+				color: white;
+				border: 5px solid rgba(255,255,255,0.2);
+			}
+			
+			.inactive-button {
+				background-color: white;
+				color: black;
+				border: 5px solid rgba(0,0,0,0.2);
+				transition: filter 0.1s;
+			}
+			
+			.inactive-button:hover {
+				filter: brightness(85%);
+			}
+
+			#game-container {
+				margin: auto;
+				margin-top:50px;
+				width:600px;
+				height:600px;
+				display:grid;
+				grid-gap: 7px 7px;
+				grid-template-columns: 1fr 1fr;
+				grid-template-rows: 1fr 1fr;
+				
+			}		
+
+			.main-div {
+				margin-top:50px;
+				width:300px;
+				height:300px;
+				display:grid;
+				grid-gap: 3px 3px;
+				grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+				grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+				
+			}
+			
+			.basic-box {
+				background-color:white;
+			}
+
+			#rowsNcols {
+				margin:auto;
+				display:grid;
+				grid-template-rows: 15px, 1fr;
+				text-align:center;
+			}
+
+			.input-box {
+				margin:auto;
+				width: 90%;
+				font-size:15px;
+				margin-bottom: 10px;
+				text-align: center;
+			}
+			
+		</style>
+	</head>
+	<body style="background-color: black;">
+		<div id="button-div">
+			<p></p>
+			<div id="rowsNcols">
+				<p style="color:white; text-align:center; margin-bottom:10px; font-size:20px;">Rows/Columns, Speed</p>
+				<div style="margin:auto; display:grid; grid-template-columns: 1fr 1fr; text-align:center;">
+					<input type="text" class="input-box" placeholder="Rows/Cols">
+					<input type="text" class="input-box" placeholder="Speed (ms)">
+				</div>
+			</div>
+			<p></p>
+			<button class="active-button">Regular Snake</button>
+			<button class="inactive-button">4x Snake</button>
+			<button class="inactive-button">2-Snake</button>
+			<p></p>
+			<button onclick="goStart()" class="start-game">Start</button>
+		</div>
+		<div id="game-container"></div>
+		<script src="snakeJS.js"></script>
+	</body>
+</html>
